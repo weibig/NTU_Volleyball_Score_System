@@ -393,15 +393,76 @@
             <script>
               function goPython(){
                   $.ajax({
-                    url: "MYSCRIPT.py",
+                    url: "test.py",
                    context: document.body
                   }).done(function() {
                    alert('finished python script');;
                   });
               }
             </script>
+            <h2 class="text-primary mb-5 font-weight-bold">Import Variable Data</h2>
 
-            
+            <script type="text/javascript">
+              function readResult() {
+                if (typeof (FileReader) != "undefined") {
+                  var reader = new FileReader();
+                  reader.onload = function (e) {
+                    var table = document.createElement("table");
+                    var rows = e.target.result.split("\n");
+                    for (var i = 0; i < rows.length; i++) {
+                        var cells = rows[i].split(",");
+                        if (cells.length > 1) {
+                            var row = table.insertRow(-1);
+                            for (var j = 0; j < cells.length; j++) {
+                                var cell = row.insertCell(-1);
+                                cell.innerHTML = cells[j];
+                            }
+                        }
+                    }
+                    var dvCSV = document.getElementById("dvCSV");
+                    dvCSV.innerHTML = "";
+                    dvCSV.appendChild(table);
+                  }
+                  reader.readAsText(fileUpload.files[0]);
+                  } else {
+                      alert("This browser does not support HTML5.");
+                  }
+              }
+              function postResult() {
+                if (typeof (FileReader) != "undefined") {
+                  var reader = new FileReader();
+                  reader.onload = function (e) {
+                    var table = document.createElement("table");
+                    var rows = e.target.result.split("\n");
+                    for (var i = 0; i < rows.length; i++) {
+                        var cells = rows[i].split(",");
+                        if (cells.length > 1) {
+                            var row = table.insertRow(-1);
+                            for (var j = 0; j < cells.length; j++) {
+                                var cell = row.insertCell(-1);
+                                cell.innerHTML = cells[j];
+                            }
+                        }
+                    }
+                    var dvCSV = document.getElementById("dvCSV");
+                    dvCSV.innerHTML = "";
+                    dvCSV.appendChild(table);
+                  }
+                  reader.readAsText(fileUpload.files[0]);
+                  } else {
+                      alert("This browser does not support HTML5.");
+                  }
+              }
+                 
+            </script>
+            <input type="file" id="fileUpload" />
+            <input type="button" id="upload" value="Upload" onclick="readResult()" />
+            <hr />
+            <div id="dvCSV">
+            </div>
+
+
+            <input type="button" id='script' name="scriptbutton" value=" Post the result " onclick="postResult()">
 
             <?php
             }

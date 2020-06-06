@@ -75,7 +75,13 @@
 				</form>
 
 				<?php 
-					if ($_GET['email'] === "manager@ntu.edu.tw" && $_GET['pass'] === "123456") 
+					if ($_GET['email'] === "manager@ntu.edu.tw" && $_GET['pass'] === "123456")
+				        $_SESSION["login_session"] = true;
+				        header("Location: index.php");
+				     } else {  
+				        $errormsgLog = "Log in error!!";
+				        $_SESSION["login_session"] = false;
+				     }
 				?>
 			</div>
 		</div>
