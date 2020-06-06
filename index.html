@@ -60,7 +60,7 @@
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                  <li><a href="#services" class="nav-link">Introduction</a></li>
+                  <li><a href="#services" class="nav-link">Solution</a></li>
                   <li><a href="" class="nav-link">Import</a></li>
                   <li><a href="l" class="nav-link">Result</a></li>
                   <li><a href="" class="nav-link">Export</a></li>
@@ -223,18 +223,7 @@
             <a href="#"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
             <h3><a href="#">Accusantium Eius Soluta</a></h3>
           </div>
-          <div class="media-29101">
-            <a href="#"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
-            <h3><a href="#">Consectetur Adipisicing Elit</a></h3>
-          </div>
-          <div class="media-29101">
-            <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-            <h3><a href="#">Beatae Doloribu</a></h3>
-          </div>
-          <div class="media-29101">
-            <a href="#"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-            <h3><a href="#">Accusantium Eius Soluta</a></h3>
-          </div>
+          
         </div>
 
       </div>
@@ -246,21 +235,46 @@
         <div class="row justify-content-center">
           <div class="col-md-8">
             
-            <h2 class="text-primary mb-5 font-weight-bold">Testimonial</h2>
+            <h2 class="text-primary mb-5 font-weight-bold">Import Team Data</h2>
 
-            <div class="owl-carousel slide-one-item">
-
-              <div class="d-md-flex testimony-29101 align-items-stretch">
-                <div class="image" style="background-image: url('images/testimony_person_1.jpg');"></div>
-                <div class="text">
-                  <blockquote>
-                    <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, at! Atque totam obcaecati veniam eius vero, similique quibusdam! Sunt sequi, nemo. Quam consequuntur ipsum suscipit repellat molestiae laboriosam, incidunt!&rdquo;</p>
-
-                    <div class="author">&mdash; Craig Stephen</div>
-                  </blockquote>
-                </div>
-              </div> 
-            </div>
+            <script type="text/javascript">
+              function Upload() {
+                  var fileUpload = document.getElementById("fileUpload");
+                  var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+                  if (regex.test(fileUpload.value.toLowerCase())) {
+                      if (typeof (FileReader) != "undefined") {
+                          var reader = new FileReader();
+                          reader.onload = function (e) {
+                              var table = document.createElement("table");
+                              var rows = e.target.result.split("\n");
+                              for (var i = 0; i < rows.length; i++) {
+                                  var cells = rows[i].split(",");
+                                  if (cells.length > 1) {
+                                      var row = table.insertRow(-1);
+                                      for (var j = 0; j < cells.length; j++) {
+                                          var cell = row.insertCell(-1);
+                                          cell.innerHTML = cells[j];
+                                      }
+                                  }
+                              }
+                              var dvCSV = document.getElementById("dvCSV");
+                              dvCSV.innerHTML = "";
+                              dvCSV.appendChild(table);
+                          }
+                          reader.readAsText(fileUpload.files[0]);
+                      } else {
+                          alert("This browser does not support HTML5.");
+                      }
+                  } else {
+                      alert("Please upload a valid CSV file.");
+                  }
+              }
+          </script>
+          <input type="file" id="fileUpload" />
+          <input type="button" id="upload" value="Upload" onclick="Upload()" />
+          <hr />
+          <div id="dvCSV">
+          </div>
           </div>
         </div>
       </div>
