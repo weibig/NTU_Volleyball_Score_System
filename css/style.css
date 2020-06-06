@@ -66,7 +66,7 @@ html {
   font-size: 30px; }
 
 .serif {
-  font-family: "Microsoft JhengHei","Roboto";}
+  font-family: "Microsoft Jhenghei","Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
 
 .font-gray-1 {
   color: #f7f7f7; }
@@ -212,7 +212,7 @@ body {
   color: #6c7b95 !important;
   font-weight: 300;
   font-size: 1rem; 
-  font-family: "Microsoft JhengHei";
+  font-family: "Microsoft Jhenghei","Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
 }
 
 ::-moz-selection {
@@ -278,7 +278,7 @@ h1, h2, h3, h4, h5,
 .form-control {
   height: 55px;
   background: #fff !important;
-  font-family: "Microsoft JhengHei", "Roboto"; }
+  font-family: "Microsoft Jhenghei","Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
   .form-control:active, .form-control:focus {
     border-color: #3b4eda; }
   .form-control:hover, .form-control:active, .form-control:focus {
@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5,
       left: 0;
       font-size: 20px;
       top: -.3rem;
-      font-family: "Microsoft JhengHei","icomoon";
+      font-family: "Microsoft Jhenghei","Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
       content: "\e5ca";
       position: absolute; }
   .ul-check.white li:before {
@@ -508,7 +508,7 @@ h1, h2, h3, h4, h5,
           -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-          font-family: "Microsoft JhengHei",'icomoon' }
+          font-family: "Microsoft Jhenghei","Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
       .site-navbar .site-navigation .site-menu .has-children .dropdown {
         visibility: hidden;
         opacity: 0;
@@ -676,7 +676,7 @@ h1, h2, h3, h4, h5,
       .site-mobile-menu .site-nav-wrap .arrow-collapse:before {
         font-size: 12px;
         z-index: 20;
-        font-family: "Microsoft JhengHei","icomoon";
+        font-family: "Microsoft Jhenghei","Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
         content: "\f078";
         position: absolute;
         top: 50%;
@@ -813,7 +813,7 @@ h1, h2, h3, h4, h5,
   .site-section-cover h1 {
     font-size: 4rem;
     line-height: 1.3;
-    font-family: "Microsoft JhengHei", "Roboto";
+    font-family: "Microsoft Jhenghei","Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
     font-weight: 900 !important; }
     @media (max-width: 991.98px) {
       .site-section-cover h1 {
@@ -986,7 +986,7 @@ h1, h2, h3, h4, h5,
     font-style: italic;
     font-size: 18px;
     color: #000;
-    font-family: "Microsoft JhengHei", 'Georgia', Times;
+    font-family: "Microsoft Jhenghei","Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
     position: relative; }
   .block-testimony-1 figure {
     position: relative;
@@ -1549,7 +1549,7 @@ h1, h2, h3, h4, h5,
     left: 0;
     font-size: 22px;
     content: "\f0c4";
-    font-family: "Microsoft JhengHei",'icomoon';
+   font-family: "Microsoft Jhenghei","Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
     position: absolute;
     color: #ccc; }
   .scissors.primary-color-icon:after {
