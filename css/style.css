@@ -275,7 +275,7 @@ h1, h2, h3, h4, h5,
 .form-control {
   height: 55px;
   background: #fff !important;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif,"Microsoft JhengHei"; }
   .form-control:active, .form-control:focus {
     border-color: #3b4eda; }
   .form-control:hover, .form-control:active, .form-control:focus {
@@ -810,7 +810,7 @@ h1, h2, h3, h4, h5,
   .site-section-cover h1 {
     font-size: 4rem;
     line-height: 1.3;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif,"Microsoft JhengHei";
     font-weight: 900 !important; }
     @media (max-width: 991.98px) {
       .site-section-cover h1 {
@@ -983,7 +983,7 @@ h1, h2, h3, h4, h5,
     font-style: italic;
     font-size: 18px;
     color: #000;
-    font-family: 'Georgia', Times, serif;
+    font-family: 'Georgia', Times, serif,"Microsoft JhengHei";
     position: relative; }
   .block-testimony-1 figure {
     position: relative;
