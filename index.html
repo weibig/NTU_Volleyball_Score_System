@@ -269,12 +269,30 @@
                       alert("Please upload a valid CSV file.");
                   }
               }
-          </script>
-          <input type="file" id="fileUpload" />
-          <input type="button" id="upload" value="Upload" onclick="Upload()" />
-          <hr />
-          <div id="dvCSV">
-          </div>
+            </script>
+            <input type="file" id="fileUpload" />
+            <input type="button" id="upload" value="Upload" onclick="Upload()" />
+            <hr />
+            <div id="dvCSV">
+            </div>
+            <h3>The input file is correct?</h3>
+
+            <input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
+
+            <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+            <script>
+              function goPython(){
+                  $.ajax({
+                    url: "MYSCRIPT.py",
+                   context: document.body
+                  }).done(function() {
+                   alert('finished python script');;
+                  });
+              }
+            </script>
+
+
           </div>
         </div>
       </div>
