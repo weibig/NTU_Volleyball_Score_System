@@ -34,9 +34,8 @@
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-33">
-						Account Login
+						Manager Login
 					</span>
-
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100-1"></span>
@@ -54,8 +53,7 @@
 							Sign in
 						</button>
 					</div>
-
-					<div class="text-center p-t-45 p-b-4">
+					<!-- <div class="text-center p-t-45 p-b-4">
 						<span class="txt1">
 							Forgot
 						</span>
@@ -73,8 +71,12 @@
 						<a href="#" class="txt2 hov1">
 							Sign up
 						</a>
-					</div>
+					</div> -->
 				</form>
+
+				<?php 
+					if ($_GET['email'] === "manager@ntu.edu.tw" && $_GET['pass'] === "123456") 
+				?>
 			</div>
 		</div>
 	</div>
