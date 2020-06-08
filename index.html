@@ -471,7 +471,9 @@
             
             <hr />
               <h2 class="text-primary mb-5 font-weight-bold">Result</h2>
-              <input type="button" id='script' name="scriptbutton" value=" Result " onclick="goPython()">
+
+              <input type="button" id='script' name="scriptbutton" value=" Result " onclick="demoResult()">
+              <table id="demoresult" class="table" style="margin-top: 5px;"></table>
 
             <hr />
               <h2 class="text-primary mb-5 font-weight-bold">Download</h2>
@@ -479,14 +481,24 @@
               <script type="text/javascript">
                   function downloadResult(){
                       $.ajax({
-                        url: "result.php",
+                        url: "download.php",
                         success: function(data) {
                           var a = document.createElement('a');
                           var filename = data;
                           a.href = filename;
-                          a.download = filename;
+                          a.download = "schedule.csv";
+                          // a.setAttributeNode(document.createAttribute('download'));
                           a.click();
                           a.remove();
+                        }
+                      });
+                  }
+                  function demoResult(){
+                      $.ajax({
+                        url: "result.php",
+                        success: function(data) {
+                          var res_table = document.getElementById('demoresult');
+                          res_table.innerHTML = data;
                         }
                       });
                   }                  
