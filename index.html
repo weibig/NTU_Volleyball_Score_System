@@ -477,7 +477,22 @@
 
             <hr />
               <h2 class="text-primary mb-5 font-weight-bold">Download</h2>
-              <input type="button" id='script' name="scriptbutton" value=" Download " onclick="goPython()">
+              <input type="button" id='script' name="scriptbutton" value=" Download " onclick="downloadResult()">
+              <script type="text/javascript">
+                  function downloadResult(){
+                      $.ajax({
+                        url: "result.php",
+                        success: function(data) {
+                          var a = document.createElement('a');
+                          var filename = data;
+                          a.href = filename;
+                          a.download = filename;
+                          a.click();
+                          a.remove();
+                        }
+                      });
+                  }                  
+              </script>
           </div>
         </div>
       </div>
