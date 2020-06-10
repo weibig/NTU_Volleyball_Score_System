@@ -179,6 +179,13 @@ iframe {
   text-align: center;
 }
 
+.login100-form-content {
+  display: block;
+  font-size: 20px;
+  color: crimson;
+  text-align: center;
+}
+
 /*------------------------------------------------------------------
 [ Input ]*/
 

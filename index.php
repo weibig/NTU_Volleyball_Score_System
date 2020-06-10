@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -64,7 +64,7 @@
                   <li class="nav-item"><a href="#import" class="nav-link js-scroll-trigger">Import</a></li>
                   <li class="nav-item"><a href="#import" class="nav-link js-scroll-trigger">Result</a></li>
                   <li class="nav-item"><a href="#import" class="nav-link js-scroll-trigger" >Export</a></li>
-                  <li class="active"><a href="login.html" class="nav-link js-scroll-trigger" >Login</a></li>
+                  <li class="active"><a href="login.php" class="nav-link js-scroll-trigger" >Login</a></li>
                 </ul>
               </nav>
             </div>
@@ -291,7 +291,7 @@
           <div class="col-md-8">
             
             <?php
-            if($_SESSION["login_session"] == false)
+            if($_SESSION["login_session"] === false)
             {
 
             ?>
@@ -343,48 +343,7 @@
             <?php
             }else{
             ?>
-            <h2 class="text-primary mb-5 font-weight-bold">Import Variable Data</h2>
-
-            <script type="text/javascript">
-              function Upload() {
-                  var fileUpload = document.getElementById("fileUpload");
-                  var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
-                  if (regex.test(fileUpload.value.toLowerCase())) {
-                      if (typeof (FileReader) != "undefined") {
-                          var reader = new FileReader();
-                          reader.onload = function (e) {
-                              var table = document.createElement("table");
-                              var rows = e.target.result.split("\n");
-                              for (var i = 0; i < rows.length; i++) {
-                                  var cells = rows[i].split(",");
-                                  if (cells.length > 1) {
-                                      var row = table.insertRow(-1);
-                                      for (var j = 0; j < cells.length; j++) {
-                                          var cell = row.insertCell(-1);
-                                          cell.innerHTML = cells[j];
-                                      }
-                                  }
-                              }
-                              var dvCSV = document.getElementById("dvCSV");
-                              dvCSV.innerHTML = "";
-                              dvCSV.appendChild(table);
-                          }
-                          reader.readAsText(fileUpload.files[0]);
-                      } else {
-                          alert("This browser does not support HTML5.");
-                      }
-                  } else {
-                      alert("Please upload a valid CSV file.");
-                  }
-              }
-            </script>
-            <input type="file" id="fileUpload" />
-            <input type="button" id="upload" value="Upload" onclick="Upload()" />
-            <hr />
-            <div id="dvCSV">
-            </div>
-
-            <h2 class="text-primary mb-5 font-weight-bold">The input file is correct?</h2>
+            <h2 class="text-primary mb-5 font-weight-bold">Schedule by imported data</h2>
 
             <input type="button" id='script' name="scriptbutton" value=" Run Scheduling Script " onclick="goPython()">
 
@@ -393,86 +352,17 @@
             <script>
               function goPython(){
                   $.ajax({
-                    url: "test.py",
+                    url: "runpython.php",
                    context: document.body
-                  }).done(function() {
-                   alert('finished python script');;
+                  }).done(function(data) {
+                   alert(data);;
                   });
               }
             </script>
-            <h2 class="text-primary mb-5 font-weight-bold">Import Variable Data</h2>
-
-            <script type="text/javascript">
-              function readResult() {
-                if (typeof (FileReader) != "undefined") {
-                  var reader = new FileReader();
-                  reader.onload = function (e) {
-                    var table = document.createElement("table");
-                    var rows = e.target.result.split("\n");
-                    for (var i = 0; i < rows.length; i++) {
-                        var cells = rows[i].split(",");
-                        if (cells.length > 1) {
-                            var row = table.insertRow(-1);
-                            for (var j = 0; j < cells.length; j++) {
-                                var cell = row.insertCell(-1);
-                                cell.innerHTML = cells[j];
-                            }
-                        }
-                    }
-                    var dvCSV = document.getElementById("dvCSV");
-                    dvCSV.innerHTML = "";
-                    dvCSV.appendChild(table);
-                  }
-                  reader.readAsText(fileUpload.files[0]);
-                  } else {
-                      alert("This browser does not support HTML5.");
-                  }
-              }
-              function postResult() {
-                if (typeof (FileReader) != "undefined") {
-                  var reader = new FileReader();
-                  reader.onload = function (e) {
-                    var table = document.createElement("table");
-                    var rows = e.target.result.split("\n");
-                    for (var i = 0; i < rows.length; i++) {
-                        var cells = rows[i].split(",");
-                        if (cells.length > 1) {
-                            var row = table.insertRow(-1);
-                            for (var j = 0; j < cells.length; j++) {
-                                var cell = row.insertCell(-1);
-                                cell.innerHTML = cells[j];
-                            }
-                        }
-                    }
-                    var dvCSV = document.getElementById("dvCSV");
-                    dvCSV.innerHTML = "";
-                    dvCSV.appendChild(table);
-                  }
-                  reader.readAsText(fileUpload.files[0]);
-                  } else {
-                      alert("This browser does not support HTML5.");
-                  }
-              }
-                 
-            </script>
-            <input type="file" id="fileUpload" />
-            <input type="button" id="upload" value="Upload" onclick="readResult()" />
-            <hr />
-            <div id="dvCSV">
-            </div>
-
-
-            <input type="button" id='script' name="scriptbutton" value=" Post the result " onclick="postResult()">
-
-            <?php
-            }
-            ?>
-
-            
             <hr />
               <h2 class="text-primary mb-5 font-weight-bold">Result</h2>
 
-              <input type="button" id='script' name="scriptbutton" value=" Result " onclick="demoResult()">
+              <input type="button" id='script' name="scriptbutton" value=" Get Result " onclick="demoResult()">
               <table id="demoresult" class="table" style="margin-top: 5px;"></table>
 
             <hr />
@@ -503,6 +393,13 @@
                       });
                   }                  
               </script>
+
+            <?php
+            }
+            ?>
+
+            
+            
           </div>
         </div>
       </div>
