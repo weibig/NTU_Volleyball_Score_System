@@ -351,7 +351,7 @@
             <hr />
             <h2 class="text-primary mb-5 font-weight-bold">The input file is correct?</h2>
 
-            <input type="button" id='script' name="scriptbutton" value=" Submit " onclick="alert('Uploaded!');">
+            <input type="button" id='script' name="scriptbutton" value=" Submit " onclick="alert('Submited!');">
             <?php
             }else{
             ?>
