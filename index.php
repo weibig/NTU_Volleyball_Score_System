@@ -1,3 +1,4 @@
+<?php ob_start();session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +47,7 @@
 
             <div class="col-3 ">
               <div class="site-logo">
-                <a href="index.html" class="font-weight-bold">NTU Volleyball</a>
+                <a href="index.php" class="font-weight-bold">NTU Volleyball</a>
               </div>
             </div>
 
@@ -59,12 +60,23 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                  <li class="nav-item"><a href="#solution" class="nav-link js-scroll-trigger">Solution</a></li>
-                  <li class="nav-item"><a href="#import" class="nav-link js-scroll-trigger">Import</a></li>
-                  <li class="nav-item"><a href="#import" class="nav-link js-scroll-trigger">Result</a></li>
-                  <li class="nav-item"><a href="#import" class="nav-link js-scroll-trigger" >Export</a></li>
+                  <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+                  <li class="nav-item"><a href="#solution" class="nav-link js-scroll-trigger">Introduction</a></li>
+                  <li class="nav-item"><a href="#import" class="nav-link js-scroll-trigger">Let's Schedule!</a></li>
+
+                  <?php
+                    if($_SESSION["login_session"] == false){
+                  ?>
                   <li class="active"><a href="login.php" class="nav-link js-scroll-trigger" >Login</a></li>
+                  
+                  <?php 
+                    }else{ 
+                  ?>
+                  <li class="active"><a href="logout.php" >Logout</a></li>
+                  <?php 
+                    } 
+                  ?>
+
                 </ul>
               </nav>
             </div>
@@ -125,8 +137,8 @@
     <!-- introduction for three groups -->
 
     <section id="s-1">
-      <div class="site-section">
-        <div class="container" data-aos="fade-up">
+      <div class="site-section" data-aos="fade-up">
+        <div class="container" >
         <div class="row justify-content-center">
           <div class="col-md-8">
             
@@ -291,7 +303,7 @@
           <div class="col-md-8">
             
             <?php
-            if($_SESSION["login_session"] === false)
+            if($_SESSION["login_session"] == false)
             {
 
             ?>
@@ -336,10 +348,10 @@
             <hr />
             <div id="dvCSV">
             </div>
-
+            <hr />
             <h2 class="text-primary mb-5 font-weight-bold">The input file is correct?</h2>
 
-            <input type="button" id='script' name="scriptbutton" value=" Submit " onclick="">
+            <input type="button" id='script' name="scriptbutton" value=" Submit " onclick="alert('Uploaded!');">
             <?php
             }else{
             ?>
@@ -376,7 +388,7 @@
                           var a = document.createElement('a');
                           var filename = data;
                           a.href = filename;
-                          a.download = "schedule.csv";
+                          a.download = "final.csv";
                           // a.setAttributeNode(document.createAttribute('download'));
                           a.click();
                           a.remove();

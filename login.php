@@ -37,6 +37,7 @@
 	} else {  
 	    $errormsgLog = "Log in error!!";
 	    $_SESSION["login_session"] = false;
+	    // $_SESSION["wrong_pass"] = true;
 	}
 	?>
 		<div class="limiter">
@@ -58,10 +59,10 @@
 							<span class="focus-input100-2"></span>
 						</div>
 						<?php
-						if($errormsgLog == "Log in error!!")
-						{
-							echo '<span class="login100-form-content">Wrong password!!</span>';
-						}
+						// if($_SESSION["wrong_pass"] == true)
+						// {
+						// 	echo '<span class="login100-form-content">Wrong password!!</span>';
+						// }
 						?>
 
 						<div class="container-login100-form-btn m-t-20">

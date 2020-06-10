@@ -1,9 +1,9 @@
 ,Mon,Tue,Wed,Thr,Fri
-court 4,"[28, 20]","[12, 21]","[9, 40]","[6, 15]","[7, 2]"
-referee,Amy,Amy,Amy,Tina,Tina
-court 5,"[31, 30]","[36, 3]","[33, 16]","[34, 32]","[22, 23]"
-referee,Tina,Tina,Tina,Joanne,Joanne
-court 6,"[38, 29]","[8, 10]","[1, 37]","[11, 18]","[19, 17]"
-referee,Joanne,Joanne,Joanne,Angela,Weibig
-court 7,"[27, 26]","[5, 35]","[39, 14]","[4, 13]","[24, 25]"
-referee,Tiffany,Tiffany,Tiffany,Weibig,Katherine
+court 4,['30-26'],['25-31'],['38-40'],['14-24'],['10-21']
+referee,Joanne,Joanne,Joanne,Joanne,Joanne
+court 5,['6-4'],['2-7'],['34-18'],['8-5'],['37-33']
+referee,Tina,Tina,Tina,Tina,Tina
+court 6,['13-22'],['17-12'],['27-28'],['36-32'],['9-39']
+referee,Tiffany,Tiffany,Tiffany,Angela,Tiffany
+court 7,['23-19'],['20-29'],['35-16'],['3-15'],['1-11']
+referee,Amy,Amy,Amy,Katherine,Catie
