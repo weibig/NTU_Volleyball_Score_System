@@ -310,6 +310,9 @@
 
             <h2 class="text-primary mb-5 font-weight-bold">Import Team Data</h2>
 
+            <h6>Please upload team data before Fri. 23:59</h6>
+            <br>
+
             <script type="text/javascript">
               function Upload() {
                   var fileUpload = document.getElementById("fileUpload");
@@ -377,6 +380,9 @@
             ?>
             <hr />
               <h2 class="text-primary mb-5 font-weight-bold">Result</h2>
+
+              <h6>The result will be posted at Sun. 12:00</h6>
+              <br>
 
               <input type="button" id='script' name="scriptbutton" value=" Get Result " onclick="demoResult()">
               <table id="demoresult" class="table" style="margin-top: 5px;"></table>
