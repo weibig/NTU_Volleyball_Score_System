@@ -371,6 +371,10 @@
                   });
               }
             </script>
+
+            <?php
+            }
+            ?>
             <hr />
               <h2 class="text-primary mb-5 font-weight-bold">Result</h2>
 
@@ -405,10 +409,6 @@
                       });
                   }                  
               </script>
-
-            <?php
-            }
-            ?>
 
             
             
